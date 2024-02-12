@@ -10,20 +10,13 @@
     {% block title %}
     <title>Hello, world!</title>
     {% endblock %}
-    <style>
-      body
-      {
-
-        
-      }
-
-    </style>
   </head>
   <body>
     <center>
         <nav class="nav" style="background-color: black;">
             <a href="{% url 'admin:index' %}" class="nav-link">Admin Page</a>
             <a href="{% url 'SchoolList' %}" class="nav-link">List Of Schools</a>
+            <a href="{% url 'SchoolCreate' %}" class="nav-link">SchoolCreate</a>
     
         </nav>
         <br><br>
