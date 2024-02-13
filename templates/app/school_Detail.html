@@ -1,0 +1,41 @@
+{% extends 'app/dummy.html' %}
+
+
+{% block title %}
+    <title>detail view</title>
+{% endblock %}
+
+
+{% block body_block %}
+    <center>
+        <h1>Detail Information of {{scl.scname}}</h1>
+        <h3>Name of the school is {{scl.scname}}</h3>
+        <h3>Principal of the school is {{scl.scprinc}}</h3>  
+        <h3>location of the school is {{scl.scloc}}</h3>
+
+        <h1>Student details</h1>
+        <table border="5px">
+
+            <tr>
+                <th>Student Name</th>
+                <th>Student Age</th>
+            </tr>
+
+            
+        {% for S in scl.Student.all %}
+        <tr>
+            <td><h5>{{S.sname}}</h5></td>
+            <td><h5>{{S.sage}}</h5></td>
+
+        </tr>
+        
+
+        {% endfor %}
+
+        </table>
+
+        <h1><a href="{% url 'SchoolUpdate' pk=scl.pk %}" class="btn btn-danger">SchoolUpdate</a></h1>
+        <h1><a href="{% url 'SchoolDelete' pk=scl.pk %}" class="btn btn-secondary">SchoolDelete</a></h1>
+
+    </center>
+{% endblock %}

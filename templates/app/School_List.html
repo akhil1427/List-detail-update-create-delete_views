@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>SchoolList</title>
+{% endblock %}
+
+{% block body_block %}
     <center>
         <h1>School Objects List</h1>
         {% for School in Schools %}
-            <h1>{{School.scname}}</h1>
+           <a href="{{School.pk}}"> <h1>{{School.scname}}</h1></a>
         {% endfor %}    
     </center>
-</body>
-</html>
+
+{% endblock %}
