@@ -1,0 +1,30 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>Delete View</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <h1>Confirm to delete {{Sclo.scname}}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Yes Delete">
+
+    </form><br>
+
+    <a href="{% url 'SchoolList' %}" class="btn btn-warning">Back to List </a>
+    <a href="{% url 'schooldetail' pk=Sclo.pk %}" class="btn btn-warning" > Back to Detail </a>
+
+</center>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
